@@ -68,6 +68,7 @@ export default function Login() {
           <img
             src="https://www.svgrepo.com/show/475656/google-color.svg"
             className="w-5"
+            alt="Google logo"
           />
           Continue with Google
         </button>
