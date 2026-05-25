@@ -116,7 +116,7 @@ team-task-manager/
 ### 1️⃣ Clone Repository
 
 ```bash
-git clone https://github.com/your-username/team-task-manager.git
+git clone (https://github.com/Siva6933/Team-Task-Manager)
 ```
 
 ---
@@ -132,7 +132,7 @@ npm install
 
 ```env
 PORT=5000
-MONGO_URI=your_mongodb_atlas_url
+MONGO_URI=mongodb+srv://Siva:Siva_098@cluster0.vyxnrrh.mongodb.net/?appName=Cluster0
 JWT_SECRET=your_secret_key
 ```
 
