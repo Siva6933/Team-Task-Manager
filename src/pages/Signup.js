@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion";
 import API from "../api/axios";
 import { useNavigate } from "react-router-dom";
-import AuthLayout from "./AuthLayout";
 
 export default function Signup() {
   const [name, setName] = useState("");
@@ -21,52 +19,47 @@ export default function Signup() {
         password,
       });
 
+      alert("Signup successful");
       navigate("/");
-    } catch {
-      alert("Signup failed");
+    } catch (err) {
+      alert(err.response?.data?.message || "Signup failed");
     }
   };
 
   return (
-    <AuthLayout>
-      <motion.div
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={{ opacity: 1, scale: 1 }}
-        className="bg-white p-8 rounded-2xl shadow-2xl"
+    <div className="min-h-screen flex items-center justify-center bg-gray-100">
+      <form
+        onSubmit={handleSignup}
+        className="bg-white p-6 rounded-xl shadow-md w-96 space-y-4"
       >
-        <h2 className="text-3xl font-bold text-center mb-6">
+        <h2 className="text-2xl font-bold">Sign Up</h2>
+
+        <input
+          className="w-full p-2 border rounded"
+          placeholder="Name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+
+        <input
+          className="w-full p-2 border rounded"
+          placeholder="Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+
+        <input
+          className="w-full p-2 border rounded"
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+
+        <button className="w-full bg-green-600 text-white p-2 rounded">
           Create Account
-        </h2>
-
-        <form onSubmit={handleSignup} className="space-y-4">
-
-          <input
-            className="w-full p-3 border rounded-lg"
-            placeholder="Name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
-
-          <input
-            className="w-full p-3 border rounded-lg"
-            placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-
-          <input
-            type="password"
-            className="w-full p-3 border rounded-lg"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-
-          <button className="w-full bg-indigo-600 text-white p-3 rounded-lg">
-            Sign Up
-          </button>
-        </form>
-      </motion.div>
-    </AuthLayout>
+        </button>
+      </form>
+    </div>
   );
 }
