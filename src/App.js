@@ -10,6 +10,8 @@ import Team from "./pages/Team";
 import Settings from "./pages/Settings";
 import Login from "./pages/Login";
 import Projects from "./pages/Projects";
+import Signup from "./pages/Signup";
+import ForgotPassword from "./pages/ForgotPassword";
 
 function App() {
   return (
@@ -45,6 +47,16 @@ function App() {
         <Route
           path="/projects"
           element={<Projects />}
+        />
+
+        <Route 
+          path="/signup" 
+          element={<Signup />} 
+        />
+
+        <Route 
+          path="/forgot-password" 
+          element={<ForgotPassword />} 
         />
 
       </Routes>
