@@ -139,19 +139,6 @@ export default function Dashboard() {
     }
   };
 
-  // Update Status
-  const updateStatus = async (id, status) => {
-    try {
-      await API.put(`/tasks/${id}`, {
-        status,
-      });
-
-      fetchTasks();
-    } catch (err) {
-      console.log(err.response?.data);
-    }
-  };
-
   // Drag & Drop Logic
   const onDragEnd = async (result) => {
     if (!result.destination) return;
