@@ -1,22 +1,19 @@
 import React, { useState } from "react";
-import AuthLayout from "./AuthLayout";
 
 export default function ForgotPassword() {
   const [email, setEmail] = useState("");
 
   const handleSubmit = () => {
-    alert("Reset link sent (UI only)");
+    alert("Password reset link sent (demo only)");
   };
 
   return (
-    <AuthLayout>
-      <div className="bg-white p-8 rounded-2xl shadow-2xl">
-        <h2 className="text-2xl font-bold text-center mb-4">
-          Forgot Password
-        </h2>
+    <div className="min-h-screen flex items-center justify-center bg-gray-100">
+      <div className="bg-white p-6 rounded-xl shadow w-96">
+        <h2 className="text-xl font-bold mb-4">Forgot Password</h2>
 
         <input
-          className="w-full p-3 border rounded-lg"
+          className="w-full p-2 border rounded mb-4"
           placeholder="Enter email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
@@ -24,11 +21,11 @@ export default function ForgotPassword() {
 
         <button
           onClick={handleSubmit}
-          className="w-full mt-4 bg-indigo-600 text-white p-3 rounded-lg"
+          className="w-full bg-blue-600 text-white p-2 rounded"
         >
           Send Reset Link
         </button>
       </div>
-    </AuthLayout>
+    </div>
   );
 }
